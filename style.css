@@ -1,0 +1,131 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: url(img.png);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.box{
+	position: relative;
+	border-radius: 20px;
+	transform-style: preserve-3d;
+}
+.card{
+	position: relative;
+	background: rgba(255, 255, 255, .1);
+	width: 300px;
+	min-height: 400px;
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	border-top: 1px solid rgba(255, 255, 255, 0.75);
+	border-left: 1px solid rgba(255, 255, 255, 0.75);
+	border-radius: 20px;
+	box-shadow: 0 25px 45px rgba(0, 0, 0, 0.05);
+	transform-style: preserve-3d;
+}
+
+.elements{
+	position: absolute;
+	top: 50px;
+	left: -30px;
+	width: 100px;
+	height: 100px;
+	background: rgba(255, 255, 255, 0.1);
+	transform: translateZ(80px);
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	border-top: 1px solid rgba(255, 255, 255, 0.75);
+	border-left: 1px solid rgba(255, 255, 255, 0.75);
+	border-radius: 10px;
+	box-shadow: 0 25px 45px rgba(0, 0, 0, 0.05);
+}
+.icon::before{
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: url(left-quote-svgrepo-com.svg);
+	background-size: 60px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	opacity: 0;
+	transition: 0.5s;
+}
+.box:hover .icon::before{
+	opacity:  1;
+}
+
+.img-box{
+	top: 0;
+	left: initial;
+	right: 60px;
+	width: 120px;
+	height: 120px;
+	padding: 10px;
+	transform: translateZ(120px);
+}
+
+.img-box img{
+	position: absolute;
+	width: calc(100% - 20px);
+	height: calc(100% - 20px);
+	border-radius: 8px;
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	border-top: 1px solid rgba(255, 255, 255, 0.75);
+	border-left: 1px solid rgba(255, 255, 255, 0.75);
+	box-shadow: 0 25px 45px rgba(0, 0, 0, 0.05);
+	opacity: 0;
+	transition: 0.5s;
+}
+.box:hover .img-box img{
+	opacity:  1;
+}
+
+.name{
+	top: 235px;
+	left: initial;
+	right: 0;
+	width: 100%;
+	padding: 10px;
+	text-align: right;
+	transform: translateZ(100px);
+	background: transparent;
+	backdrop-filter: blur(0px);
+	border: none;
+	box-shadow: none;
+	color: #fff;
+	opacity: 0;
+	transition: 0.5s;
+	transition-delay: 0.25s;
+}
+.box:hover .name{
+	top: 135px;
+	opacity: 1;
+}
+.content{
+	left: initial;
+	right: -20px;
+	width: 80%;
+	min-height: 200px;
+	padding: 10px;
+	text-align: center ;
+	transform: translateZ(180px);
+	color: #000;
+	opacity: 0;
+	transition: 0.5s;
+	transition-delay: 0.25s;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.box:hover .content{
+	top: 200px;
+	opacity: 1;
+}
